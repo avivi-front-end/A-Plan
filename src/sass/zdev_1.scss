@@ -1,0 +1,75 @@
+header{ background-color: #fff;}
+.header{ display: flex; justify-content: space-between; align-items: center; height: 100px;
+  	&__logo{}
+  	&__lic{color:#000;
+	  	p{ margin: 0; font-size: 11px; font-weight: 300;}
+	  	h6{ margin: 0; text-transform: uppercase; font-weight: 700; font-size: 13px;}
+	}
+  	&__soc{ display: flex; justify-content: center; align-content: center;
+	  &__item{ width: 31px; height: 30px; background-color: rgba(0,0,0,0.1); display: flex; justify-content: center; align-items: center; border-radius:2px; transition:all 200ms; margin: 0 2.5px; cursor: pointer;
+			&:hover{ background-color: #f68121;}
+	  }
+	}
+  	&__tel{
+	  p{ color: #000; margin: 0; font-size:13px; font-weight: 300;}
+	  a{ color: #000; font-size: 19px; font-weight: 500; text-decoration:none; transition:all 200ms;
+	  	&:hover{ text-decoration: underline; color: #eee;}
+	  }
+	}
+  	&__button{}
+}
+.button{ display: block; margin: 0 auto; font-size: 13px; font-weight: 300; color: #000; display: flex; justify-content: center; text-decoration: none; align-items: center; width: 220px; height: 50px; background-color: #ffde00; border:3px solid #ffde00; transition: all 200ms; border-radius:2px;
+  	&:hover{ background-color: transparent; color: #ffde00;}
+  &--slider{ font-size: 17px; width: 235px; height: 65px;}
+}
+.slider{ background-image: url(../images/bgfortz.jpg); background-position: bottom 50%; background-size:cover; width: 100vw; height:calc(100vh - 100px); display: flex; justify-content: center; align-items: center; transition:all 200ms; position: relative;
+  &__menu{ position: absolute; bottom: 0; width: 100%; background-color: rgba(0,0,0,0.2);
+	ul{ display: flex; justify-content: center; align-items: center; height: 70px; width: 100%; padding: 0 10px; max-width: 1280px; margin: 0 auto;
+	  li{ width: 25%; text-align: center;
+		a{ color: #778499; text-decoration:underline; position: relative; text-transform: uppercase; transition:all 200ms;
+		  &:hover{ color: #ffde00;}
+		}
+	  }
+	}
+  }
+  &__content{
+	&__title{ color: #fff; font-weight: 100; font-size: 75px; text-align: center;}
+	&__text{ justify-content: center; align-items: center; display: flex;
+	  &__item{ width: 220px; height: 185px; display: flex; justify-content: center; align-items: center; flex-direction: column; border:1px solid #3c424b; margin: 0 14px;
+		&__top{ display: flex; justify-content: center; align-items: flex-end; height: 90px;}
+		&__bot{ color: #fff; display: flex; justify-content: center; align-items: flex-start; height: 95px; text-align: center;}
+	  }
+	}
+	&__wrap{ display: block; width: 100%; max-width: 1280px;
+	  &__slide{ display: inline-block;}
+	}
+	&__button{ position: relative;
+	  &__text{color: #fff; font-weight: 300; position: absolute; right: 0; width: 270px; top: 0;
+		h6{ font-size: 15px; margin: 0; font-weight: 700;}
+		p{ margin: 0;}
+		i{ color: #778499; font-size: 13px;}
+	  }
+	}
+  }
+}
+.slick-prev{transform:rotate(-135deg); left: 5px;}
+.slick-next{transform:rotate(45deg); right: 5px;}
+.slick-arrow{ width: 36px; height: 36px; border-top:1px solid #8d9091; border-right:1px solid #8d9091;font-size: inherit;  cursor: pointer; transition:all 200ms;
+  &:before{ display: none;}
+  &:hover{ border-right-color: #fac801;border-top-color: #fac801;}
+}
+.whatis{ background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;
+  &__content{ display: flex; justify-content: space-between; align-items: center;
+	&__left{ width: 430px; color:#333; font-size: 15px; font-weight: 300; text-align: center;
+		h5{ margin: 0; font-size: 41px; font-weight: 400; color: #000;}
+	}
+	&__right{ width: 790px;
+		&__ttl{ font-size: 41px; color: #000; font-weight: 400;}
+		&__table{ width: 100%; background-color: #fff; font-size: 15px; display: flex; justify-content: center; align-items:flex-start; flex-wrap: wrap;
+		   &__item{ display: flex; justify-content: space-between; align-items: center; width: 50%;
+			 p{ margin: 0; width: 235px;}
+		   }
+		}
+	}
+  }
+}

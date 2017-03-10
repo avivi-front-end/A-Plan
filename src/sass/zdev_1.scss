@@ -19,10 +19,13 @@ header{ background-color: #fff;}
   	&__button{}
 }
 .button{ display: block; margin: 0 auto; font-size: 13px; font-weight: 300; color: #000; display: flex; justify-content: center; text-decoration: none; align-items: center; width: 220px; height: 50px; background-color: #ffde00; border:3px solid #ffde00; transition: all 200ms; border-radius:2px;
-  	&:hover{ background-color: transparent; color: #ffde00;}
-  &--slider{ font-size: 17px; width: 235px; height: 65px;}
+  	&:hover{ background-color: transparent; }
+  &--slider{ font-size: 17px; width: 235px; height: 65px;
+  	&:hover{color: #ffde00;}
+  }
+  &--koleso{ width: 280px; height: 60px; font-size: 15px;}
 }
-.slider{ background-image: url(../images/bgfortz.jpg); background-position: bottom 50%; background-size:cover; width: 100vw; height:calc(100vh - 100px); display: flex; justify-content: center; align-items: center; transition:all 200ms; position: relative;
+.slider{ background-image: url(../images/bgfortz.jpg); background-position: bottom 50%; background-size:cover; width: 100%; height:calc(100vh - 100px); display: flex; justify-content: center; align-items: center; transition:all 200ms; position: relative;
   &__menu{ position: absolute; bottom: 0; width: 100%; background-color: rgba(0,0,0,0.2);
 	ul{ display: flex; justify-content: center; align-items: center; height: 70px; width: 100%; padding: 0 10px; max-width: 1280px; margin: 0 auto;
 	  li{ width: 25%; text-align: center;
@@ -33,7 +36,7 @@ header{ background-color: #fff;}
 	}
   }
   &__content{
-	&__title{ color: #fff; font-weight: 100; font-size: 75px; text-align: center;}
+	&__title{ color: #fff; font-weight: 100; font-size: 75px; text-align: center;font-family:'PFDinTextPro';}
 	&__text{ justify-content: center; align-items: center; display: flex;
 	  &__item{ width: 220px; height: 185px; display: flex; justify-content: center; align-items: center; flex-direction: column; border:1px solid #3c424b; margin: 0 14px;
 		&__top{ display: flex; justify-content: center; align-items: flex-end; height: 90px;}
@@ -61,10 +64,10 @@ header{ background-color: #fff;}
 .whatis{ background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;
   &__content{ display: flex; justify-content: space-between; align-items: center;
 	&__left{ width: 430px; color:#333; font-size: 15px; font-weight: 300; text-align: center;
-		h5{ margin: 0; font-size: 41px; font-weight: 400; color: #000;}
+		h5{ margin: 0; font-size: 41px; font-weight: 400; color: #000;font-family:'PFDinTextPro';}
 	}
 	&__right{ width: 790px;
-		&__ttl{ font-size: 41px; color: #000; font-weight: 400;}
+		&__ttl{ font-size: 41px; color: #000; font-weight: 400; font-family:'PFDinTextPro'; text-align: center;}
 		&__table{ width: 100%; background-color: #fff; font-size: 15px; display: flex; justify-content: center; align-items:flex-start; flex-wrap: wrap;
 		   &__item{ display: flex; justify-content: space-between; align-items: center; width: 50%;
 			 p{ margin: 0; width: 235px;}
@@ -72,4 +75,81 @@ header{ background-color: #fff;}
 		}
 	}
   }
+}
+.why{
+	&__columns{ text-align: center; width: 100%;}
+}
+.radio{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;
+	&__content{}
+	&__title{ color: #000; font-family:'PFDinTextPro'; width: 570px; margin: 0 auto; text-align: center;
+		h3{ margin: 0; font-weight: 400; font-size: 41px;}
+		p{ margin: 0; font-weight: 100; font-size: 21px;}
+		i{ font-weight:400; font-size: 24px;font-style: normal;}
+	}
+	&__table{ display: flex; justify-content: center; align-items: center; flex-direction: column;
+		&__row{  width: 100%; position: relative; cursor:default;
+			&__radio{ width:190px; margin-left: 23px; background-color: #ffcc00; height: 100%; position: absolute; right: 0; top: 0; display: flex; justify-content: center; align-items: center;
+				b{ width: 16px; height: 16px; background-color: #fff; border:4px solid #fff; display: inline-block; cursor: pointer;
+					&.act{ background-color: transparent;}
+				}
+				input{ width: 0; opacity: 0;}
+				input:checked + b{ background-color: transparent;}
+				span{ font-size: 15px;}
+				label{ cursor: pointer; width: 50%; display: flex; justify-content: center; align-items: center;}
+			}
+			&__text{ width:calc(100% - 213px); min-height: 70px; height: 1px;display: flex; justify-content: flex-start; align-items: center; border:1px solid #e8e8e8; background-color: #f7f7f7; margin-bottom: 10px;}
+			&:hover{
+				.radio__table__row__text{box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.07);  background-color: #fff; color: #000;}
+				.radio__table__row__radio{ background-color: #ffd800;}
+			}
+			&.act{
+				.radio__table__row__text{ color: #999999;}
+			}
+		}
+	}
+
+}
+.koleso{ overflow: hidden;
+	&__wraper{ position: relative; margin-top: -263px; padding-bottom: 144px;}
+  	&__logo{border-radius: 50%; width: 507px; height: 506px; display: block; position: absolute; top: 95px; padding-top: 291px; left:calc(50% - 253px); background-color: #f9f9f9; text-align: center; }
+	&__text{ max-width: 690px; width: 100%;bottom: 250px; position: absolute; left: 50%; transform: translateX(-50%);}
+    &__form{
+      input{ width: 100%; margin: 0 auto; max-width: 280px; height: 60px; border-radius: 2px; border:1px solid #e8e8e8; text-align: center; display: block;  }
+    }
+}
+.kolo{ position: relative; width: 1098px; padding: 0; margin: 0 auto;
+	&:before{ content: ''; width: 100%; height: 1098px; border-radius: 50%; border:1px solid #fc0; display: block;}
+	li{ list-style-type: none; position: absolute;  transform-origin: 50% -506px; transition:transform 300ms; bottom: -40px; left:calc(50% - 47px);
+		&:after{ content: ''; background-color: #ffcc00; width: calc(100% + 10px); left: -5px; top:calc(50% - 9px); height: 18px; border-radius: 9px; display: block; transition:opacify 200ms; position: absolute; z-index: 0; opacity: 0;}
+      &.active{
+        &:after{ opacity: 1;}
+        .kolo__wrap{ background-color: #fc0;}
+        .kolo__img{transform:rotateY(180deg);
+          &.active{transform:rotateY(0deg);}
+        }
+      }
+      &.left6{transform:rotate(180deg); .kolo__img img{transform:rotate(-180deg);}}
+      &.left5{transform:rotate(150deg); .kolo__img img{transform:rotate(-150deg);}}
+      &.left4{transform:rotate(120deg); .kolo__img img{transform:rotate(-120deg);}}
+      &.left3{transform:rotate(90deg); .kolo__img img{transform:rotate(-90deg);}}
+      &.left2{transform:rotate(60deg); .kolo__img img{transform:rotate(-60deg);}}
+      &.left1{transform:rotate(30deg); .kolo__img img{transform:rotate(-30deg);}}
+      &.right1{transform:rotate(-30deg); .kolo__img img{transform:rotate(30deg);}}
+      &.right2{transform:rotate(-60deg); .kolo__img img{transform:rotate(60deg);}}
+      &.right3{transform:rotate(-90deg); .kolo__img img{transform:rotate(90deg);}}
+      &.right4{transform:rotate(-120deg); .kolo__img img{transform:rotate(120deg);}}
+      &.right5{transform:rotate(-150deg); .kolo__img img{transform:rotate(150deg);}}
+      &.right6{transform:rotate(-180deg); .kolo__img img{transform:rotate(180deg);}}
+	}
+	&__wrap{  border-radius: 2px; border:1px solid #fc0; background-color: #f9f9f9; width: 85px; height: 85px; z-index: 1; position: relative;transition:all 300ms; cursor: pointer;
+		&:hover{ background-color: #fc0;}
+	}
+	&__img{width: 85px; height: 85px; display: flex; justify-content: center; align-items: center; backface-visibility: hidden; transition:transform 300ms;
+      &.active{transform:rotateY(-180deg);  position: absolute; top: 0; left: 0;}
+    }
+    &__txt{ display: none;}
+}
+.scripted-text{
+	h4{ margin: 0;}
+	p{ margin: 0;}
 }

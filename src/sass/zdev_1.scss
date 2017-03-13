@@ -1,22 +1,22 @@
 header{ background-color: #fff;}
 .header{ display: flex; justify-content: space-between; align-items: center; height: 100px;
-  	&__logo{}
-  	&__lic{color:#000;
+  	&__logo{ display: flex; justify-content: flex-start; align-items: center;}
+  	&__lic{color:#000; border-left: 1px solid #e5e5e5; margin-left: 27px; padding-left: 22px;
 	  	p{ margin: 0; font-size: 11px; font-weight: 300;}
-	  	h6{ margin: 0; text-transform: uppercase; font-weight: 700; font-size: 13px;}
+	  	h6{ margin: 0; text-transform: uppercase; font-weight: 700; font-size: 13px; padding-bottom: 7px; letter-spacing: 0.7px;}
 	}
   	&__soc{ display: flex; justify-content: center; align-content: center;
 	  &__item{ width: 31px; height: 30px; background-color: rgba(0,0,0,0.1); display: flex; justify-content: center; align-items: center; border-radius:2px; transition:all 200ms; margin: 0 2.5px; cursor: pointer;
 			&:hover{ background-color: #f68121;}
 	  }
 	}
-  	&__tel{
-	  p{ color: #000; margin: 0; font-size:13px; font-weight: 300;}
-	  a{ color: #000; font-size: 19px; font-weight: 500; text-decoration:none; transition:all 200ms;
+  	&__tel{ margin-right: 49px;
+	  p{ color: #000; margin: 0; font-size:13px; font-weight: 300; letter-spacing: 0.3px;}
+	  a{ color: #000; font-size: 19px; font-weight: 500; text-decoration:none; transition:all 200ms; padding-top: 4px; display: inline-block; letter-spacing: -0.5px;
 	  	&:hover{ text-decoration: underline; color: #eee;}
 	  }
 	}
-  	&__button{}
+  	&__button{ display: flex; justify-content: flex-end; align-items: center;}
 }
 .button{ display: block; margin: 0 auto; font-size: 13px; font-weight: 300; color: #000; display: flex; justify-content: center; text-decoration: none; align-items: center; width: 220px; height: 50px; background-color: #ffde00; border:3px solid #ffde00; transition: all 200ms; border-radius:2px;
   	&:hover{ background-color: transparent; }
@@ -24,26 +24,27 @@ header{ background-color: #fff;}
   	&:hover{color: #ffde00;}
   }
   &--koleso{ width: 280px; height: 60px; font-size: 15px;}
+  &--steps{ width: 150px; height: 40px; margin: 0; }
 }
 .slider{ background-image: url(../images/bgfortz.jpg); background-position: bottom 50%; background-size:cover; width: 100%; height:calc(100vh - 100px); display: flex; justify-content: center; align-items: center; transition:all 200ms; position: relative;
   &__menu{ position: absolute; bottom: 0; width: 100%; background-color: rgba(0,0,0,0.2);
 	ul{ display: flex; justify-content: center; align-items: center; height: 70px; width: 100%; padding: 0 10px; max-width: 1280px; margin: 0 auto;
 	  li{ width: 25%; text-align: center;
-		a{ color: #778499; text-decoration:underline; position: relative; text-transform: uppercase; transition:all 200ms;
-		  &:hover{ color: #ffde00;}
+		a{ color: #778499; text-decoration:none; border-bottom: 1px solid #778499; position: relative; text-transform: uppercase; transition:all 200ms; padding-bottom: 3px;
+		  &:hover{ color: #ffde00; border-bottom: 1px solid #ffde00;}
 		}
 	  }
 	}
   }
   &__content{
-	&__title{ color: #fff; font-weight: 100; font-size: 75px; text-align: center;font-family:'PFDinTextPro';}
+	&__title{ color: #fff; font-weight: 100; font-size: 75px; text-align: center;font-family:'PFDinTextPro'; letter-spacing: -1.5px; padding-bottom: 45px;}
 	&__text{ justify-content: center; align-items: center; display: flex;
 	  &__item{ width: 220px; height: 185px; display: flex; justify-content: center; align-items: center; flex-direction: column; border:1px solid #3c424b; margin: 0 14px;
-		&__top{ display: flex; justify-content: center; align-items: flex-end; height: 90px;}
-		&__bot{ color: #fff; display: flex; justify-content: center; align-items: flex-start; height: 95px; text-align: center;}
+		&__top{ display: flex; justify-content: center; align-items: flex-end; height: 86px;}
+		&__bot{ color: #fff; display: flex; justify-content: center; align-items: flex-start; height: 99px; padding-top: 17px; text-align: center;}
 	  }
 	}
-	&__wrap{ display: block; width: 100%; max-width: 1280px;
+	&__wrap{ display: block; width: 100%; max-width: 1280px; margin-bottom: 83px;
 	  &__slide{ display: inline-block;}
 	}
 	&__button{ position: relative;
@@ -62,42 +63,43 @@ header{ background-color: #fff;}
   &:hover{ border-right-color: #fac801;border-top-color: #fac801;}
 }
 .whatis{ background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;
-  &__content{ display: flex; justify-content: space-between; align-items: center;
-	&__left{ width: 430px; color:#333; font-size: 15px; font-weight: 300; text-align: center;
-		h5{ margin: 0; font-size: 41px; font-weight: 400; color: #000;font-family:'PFDinTextPro';}
+  &__content{ display: flex; justify-content: space-between; align-items: flex-start; padding-top: 81px; padding-bottom: 73px;
+	&__left{ width: 430px; color:#333; font-size: 15px; font-weight: 300; text-align: center; line-height: 1.7;
+		h5{  font-size: 41px; font-weight: 400; color: #000;font-family:'PFDinTextPro'; width: 100%;  max-width: 320px; line-height: 1; margin: 0 auto 27px; padding-top: 4px;}
+	  p{ margin-bottom: 26px;}
 	}
 	&__right{ width: 790px;
-		&__ttl{ font-size: 41px; color: #000; font-weight: 400; font-family:'PFDinTextPro'; text-align: center;}
-		&__table{ width: 100%; background-color: #fff; font-size: 15px; display: flex; justify-content: center; align-items:flex-start; flex-wrap: wrap;
-		   &__item{ display: flex; justify-content: space-between; align-items: center; width: 50%;
+		&__ttl{ font-size: 41px; color: #000; font-weight: 400; font-family:'PFDinTextPro'; text-align: center; margin-bottom: 25px;}
+		&__table{ width: 100%; background-color: #fff; font-size: 15px; display: flex; justify-content: space-between; align-items:flex-start; flex-wrap: wrap; padding: 21px 22px 0 29px;	 line-height: 1.35;
+		   &__item{ display: flex; justify-content: space-between; align-items: center; width: 300px; margin-bottom: 35px;
 			 p{ margin: 0; width: 235px;}
 		   }
 		}
 	}
   }
 }
-.why{
-	&__columns{ text-align: center; width: 100%;}
+.why{ padding: 16px 0 28px;  text-align: center;
+	&__columns{ width: 100%;}
 }
-.radio{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;
+.radio{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;     padding: 83px 0 100px;
 	&__content{}
 	&__title{ color: #000; font-family:'PFDinTextPro'; width: 570px; margin: 0 auto; text-align: center;
-		h3{ margin: 0; font-weight: 400; font-size: 41px;}
+		h3{ margin: 0; font-weight: 400; font-size: 41px; margin-bottom: 15px;}
 		p{ margin: 0; font-weight: 100; font-size: 21px;}
-		i{ font-weight:400; font-size: 24px;font-style: normal;}
+		i{ font-weight:400; font-size: 24px;font-style: normal; padding-top: 49px; display: inline-block;}
 	}
-	&__table{ display: flex; justify-content: center; align-items: center; flex-direction: column;
+	&__table{ display: flex; justify-content: center; align-items: center; flex-direction: column; padding-top: 25px;
 		&__row{  width: 100%; position: relative; cursor:default;
-			&__radio{ width:190px; margin-left: 23px; background-color: #ffcc00; height: 100%; position: absolute; right: 0; top: 0; display: flex; justify-content: center; align-items: center;
-				b{ width: 16px; height: 16px; background-color: #fff; border:4px solid #fff; display: inline-block; cursor: pointer;
+			&__radio{ width:190px; margin-left: 23px; background-color: #ffcc00; height: 100%; position: absolute; right: 0; top: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 29px 11px;
+				b{ width: 16px; height: 16px; background-color: #fff; border:4px solid #fff; display: inline-block; cursor: pointer; margin-right: 11px;
 					&.act{ background-color: transparent;}
 				}
 				input{ width: 0; opacity: 0;}
 				input:checked + b{ background-color: transparent;}
 				span{ font-size: 15px;}
-				label{ cursor: pointer; width: 50%; display: flex; justify-content: center; align-items: center;}
+				label{ cursor: pointer; width: 50px; display: flex; justify-content: center; align-items: center;}
 			}
-			&__text{ width:calc(100% - 213px); min-height: 70px; height: 1px;display: flex; justify-content: flex-start; align-items: center; border:1px solid #e8e8e8; background-color: #f7f7f7; margin-bottom: 10px;}
+			&__text{ width:calc(100% - 213px); min-height: 70px; height: 1px;display: flex; justify-content: flex-start; align-items: center; border:1px solid #e8e8e8; background-color: #f7f7f7; margin-bottom: 10px; padding: 0 31px 0; line-height: 1.3;  letter-spacing: 0.45px;}
 			&:hover{
 				.radio__table__row__text{box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.07);  background-color: #fff; color: #000;}
 				.radio__table__row__radio{ background-color: #ffd800;}
@@ -105,16 +107,19 @@ header{ background-color: #fff;}
 			&.act{
 				.radio__table__row__text{ color: #999999;}
 			}
+		  	&:last-child .radio__table__row__text{ margin-bottom: 0;}
+		  	&:last-child .radio__table__row__radio{padding: 0 29px 0;}
 		}
 	}
 
 }
+
 .koleso{ overflow: hidden;
 	&__wraper{ position: relative; margin-top: -263px; padding-bottom: 144px;}
   	&__logo{border-radius: 50%; width: 507px; height: 506px; display: block; position: absolute; top: 95px; padding-top: 291px; left:calc(50% - 253px); background-color: #f9f9f9; text-align: center; }
 	&__text{ max-width: 690px; width: 100%;bottom: 250px; position: absolute; left: 50%; transform: translateX(-50%);}
     &__form{
-      input{ width: 100%; margin: 0 auto; max-width: 280px; height: 60px; border-radius: 2px; border:1px solid #e8e8e8; text-align: center; display: block;  }
+      input{ width: 100%; margin: 0 auto; max-width: 280px; height: 50px; border-radius: 2px; border:1px solid #e8e8e8; text-align: center; display: block; margin-bottom: 6px; }
     }
 }
 .kolo{ position: relative; width: 1098px; padding: 0; margin: 0 auto;
@@ -124,32 +129,69 @@ header{ background-color: #fff;}
       &.active{
         &:after{ opacity: 1;}
         .kolo__wrap{ background-color: #fc0;}
-        .kolo__img{transform:rotateY(180deg);
-          &.active{transform:rotateY(0deg);}
+        .kolo__img{transform:rotateY(540deg); opacity: 0;
+          &.active{transform:rotateY(360deg); opacity: 1;}
         }
       }
-      &.left6{transform:rotate(180deg); .kolo__img img{transform:rotate(-180deg);}}
-      &.left5{transform:rotate(150deg); .kolo__img img{transform:rotate(-150deg);}}
-      &.left4{transform:rotate(120deg); .kolo__img img{transform:rotate(-120deg);}}
-      &.left3{transform:rotate(90deg); .kolo__img img{transform:rotate(-90deg);}}
-      &.left2{transform:rotate(60deg); .kolo__img img{transform:rotate(-60deg);}}
-      &.left1{transform:rotate(30deg); .kolo__img img{transform:rotate(-30deg);}}
-      &.right1{transform:rotate(-30deg); .kolo__img img{transform:rotate(30deg);}}
-      &.right2{transform:rotate(-60deg); .kolo__img img{transform:rotate(60deg);}}
-      &.right3{transform:rotate(-90deg); .kolo__img img{transform:rotate(90deg);}}
-      &.right4{transform:rotate(-120deg); .kolo__img img{transform:rotate(120deg);}}
-      &.right5{transform:rotate(-150deg); .kolo__img img{transform:rotate(150deg);}}
-      &.right6{transform:rotate(-180deg); .kolo__img img{transform:rotate(180deg);}}
+      &.left0{transform:rotate(180deg); .kolo__wrap{transform:rotate(-180deg);}}
+      &.left1{transform:rotate(150deg); .kolo__wrap{transform:rotate(-150deg);}}
+      &.left2{transform:rotate(120deg); .kolo__wrap{transform:rotate(-120deg);}}
+      &.left3{transform:rotate(90deg); .kolo__wrap{transform:rotate(-90deg);}}
+      &.left4{transform:rotate(60deg); .kolo__wrap{transform:rotate(-60deg);}}
+      &.left5{transform:rotate(30deg); .kolo__wrap{transform:rotate(-30deg);}}
+      &.left7{transform:rotate(-30deg); .kolo__wrap{transform:rotate(30deg);}}
+      &.left8{transform:rotate(-60deg); .kolo__wrap{transform:rotate(60deg);}}
+      &.left9{transform:rotate(-90deg); .kolo__wrap{transform:rotate(90deg);}}
+      &.left10{transform:rotate(-120deg); .kolo__wrap{transform:rotate(120deg);}}
+      &.left11{transform:rotate(-150deg); .kolo__wrap{transform:rotate(150deg);}}
+      &.left12{transform:rotate(-180deg); .kolo__wrap{transform:rotate(180deg);}}
 	}
 	&__wrap{  border-radius: 2px; border:1px solid #fc0; background-color: #f9f9f9; width: 85px; height: 85px; z-index: 1; position: relative;transition:all 300ms; cursor: pointer;
 		&:hover{ background-color: #fc0;}
 	}
-	&__img{width: 85px; height: 85px; display: flex; justify-content: center; align-items: center; backface-visibility: hidden; transition:transform 300ms;
-      &.active{transform:rotateY(-180deg);  position: absolute; top: 0; left: 0;}
+	&__img{width: 85px; height: 85px; display: flex; justify-content: center; align-items: center; backface-visibility: hidden; transition:all 900ms ease-out; opacity: 1;
+      &.active{transform:rotateY(-180deg);  position: absolute; top: 0; left: 0; opacity: 0;}
     }
     &__txt{ display: none;}
 }
-.scripted-text{
-	h4{ margin: 0;}
-	p{ margin: 0;}
+.arrowed__text{ position: relative;}
+.scripted-text{transform: scale(0); opacity: 0; transition: all 200ms; max-width: 460px; width: 100%; margin: 0 auto; text-align: center; padding-bottom: 28px; line-height: 2;
+  &.show{ opacity: 1; transform: scale(1);}
+	h4{ margin: 0; font-size: 31px; font-weight: 100; font-family:'PFDinTextPro';}
+	p{ margin: 0; font-size: 13px; font-weight: 300;}
+}
+.steps{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;
+  &__wrap{ position: relative; overflow: hidden; padding: 92px 0 105px;
+	&:before{content: ''; background-image: url(../images/stepsbg.png); width: 1472px; height: 226px; background-repeat: no-repeat; background-size: cover; display: block; position: absolute; left: 0; top: 170px;}
+  }
+  &__ttl{ text-align: center;  padding: 0 0 30px; min-height: 138px;
+	h5{ font-size: 41px; font-weight: 400; color: #000; font-family:'PFDinTextPro'; margin: 0;}
+  }
+  &__items{ display: flex; justify-content: flex-start; align-items: flex-start;}
+  &__item{ width: 248px;
+  	&:nth-child(1){ margin-right: 101px;}
+  	&:nth-child(2){ padding-top: 69px; margin-right: 101px;}
+  	&:nth-child(3){ padding-top: 69px; margin-right: 101px;}
+  	&:nth-child(4){ width: 200px;}
+  }
+  &__img{ width: 151px; height: 150px; position: relative; display: flex; justify-content:center; align-items: center; margin: 0 0 27px 18px;
+  	&:hover .steps__big-circle{animation: rotating 3s linear infinite;}
+  	&:hover .steps__small-circle{animation: rotating 4s linear infinite; animation-direction: reverse;}
+  	&:hover .steps__small-circle span{animation: rotating 4s linear infinite;}
+  }
+  &__big-circle{ background-image: url(../images/circle-big.png); width: 151px; height: 150px; background-repeat: no-repeat; background-size: cover; display: block; position: absolute; transition: all 1300ms;
+	&:before{content: ''; background-color: #fc0; width: 7px; height: 7px; display: block; border-radius: 50%;position: absolute;	  left: 75px; top: -3px;}
+  }
+  &__small-circle{ background-repeat: no-repeat; background-size: cover; display: block; background-image: url(../images/circle-small.png); width: 91px; height: 110px; position: absolute; top: 25px; left: 16px; transform-origin: 59.5px 50px;
+	span{ width: 30px; height: 30px; background-color: #fc0;font-size: 12px; font-weight: 500; color: #000; display: flex; justify-content: center; align-items: center; border-radius: 50%; position: absolute; top: 77px; left: 1px;}
+  }
+  &__pict{}
+  &__text{ font-weight: 300; font-size: 17px;
+  	p{ margin-bottom: 11px;}
+  }
+  
+}
+@keyframes rotating {
+  from {transform: rotate(0deg); }
+  to {transform: rotate(360deg);}
 }

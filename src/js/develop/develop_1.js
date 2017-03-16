@@ -16,7 +16,29 @@ function slickInit(){
         slick2.slick({
             infinite: false,
             slidesToShow: 4,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1130,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 940,
+                    settings: {
+                        slidesToShow: 2
+
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+
+            ]
         });
     }
     var slick3 =$('.partners__slider');
@@ -24,7 +46,24 @@ function slickInit(){
         slick3.slick({
             infinite: true,
             slidesToShow: 3,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        arrows:false,
+                        centerMode: true,
+
+                    }
+                }
+            ]
         });
     }
     var slick4 =$('.why__slider');

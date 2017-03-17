@@ -88,7 +88,7 @@ header{ background-color: #fff;}
   &:before{ display: none;}
   &:hover{ border-right-color: #fac801;border-top-color: #fac801;}
 }
-.whatis{ background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;
+.whatis{ background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%; min-height:545px; height:100vh; display:flex; justify-content:center; align-items:center;
 	&__content{ display: flex; justify-content: space-between; align-items: flex-start; padding-top: 81px; padding-bottom: 73px;
 		&__left{ width: 430px; color:#333; font-size: 15px; font-weight: 300; text-align: center; line-height: 1.7;
 			h5{  font-size: 41px; font-weight: 400; color: #000;font-family:'PFDinTextPro'; width: 100%;  max-width: 320px; line-height: 1; margin: 0 auto 27px; padding-top: 4px;
@@ -117,7 +117,7 @@ header{ background-color: #fff;}
 		@media screen and (max-width: 1100px){ flex-direction:column; padding-top:35px;}
 	}
 }
-.why{ padding: 16px 0 28px;  text-align: center;
+.why{ padding: 16px 0 28px;  text-align: center; min-height:908px; height:100vh; display:flex; justify-content:center; align-items:center;
 	&__columns{ width: 100%;
 		&.desctop{ display:block;}
 		&.mobile{ display:none; background-color:#fff;}
@@ -140,23 +140,35 @@ header{ background-color: #fff;}
   .slick-next{right: 28px;}
   .slick-arrow{ top:18px;}
 }
-
-.radio{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;     padding: 83px 0 100px;
+.fancybox-enabled .scrollbutton{ display:none;}
+.scrollbutton{ width:40px; height:40px; left:calc(50% - 16px); bottom:70px; position:fixed; cursor:pointer; z-index:999; opacity:1; transition:all 200ms; pointer-events:all;	background-image: url(../images/mouse-clicker.png); background-position: 50%; background-color: rgba(0,0,0,0.3); border-radius: 50%; background-repeat: no-repeat;
+	&:hover{background-color: rgba(0,0,0,0.1);}
+	&.hide{ opacity:0; pointer-events:none;}
+	@media screen and (max-width: 1024px){ display: none;}
+}
+.radio{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;     padding: 83px 0 100px; min-height:813px; height:100vh; display:flex; justify-content:center; align-items:center;
   	@media screen and (max-width: 600px){ padding: 83px 0 15px;}
 	&__content{}
-	&__title{ color: #000; font-family:'PFDinTextPro';  width:100%; max-width: 570px; margin: 0 auto; text-align: center;
+	&__title{ color: #000; font-family:'PFDinTextPro';  width:100%; max-width: 570px; margin: 0 auto 50PX; text-align: center;
 		h3{ margin: 0; font-weight: 400; font-size: 41px; margin-bottom: 15px;
 		  @media screen and (max-width: 600px){ font-size:25px;}
 		}
 		p{ margin: 0; font-weight: 100; font-size: 21px;
 		  @media screen and (max-width: 600px){ font-size:15px;}
 		}
-		i{ font-weight:400; font-size: 24px;font-style: normal; padding-top: 49px; display: inline-block;
-		  @media screen and (max-width: 600px){ font-size:21px;}
-		}
+		
 	}
-	&__table{ display: flex; justify-content: center; align-items: center; flex-direction: column; padding-top: 25px;
+  	&__checkbutton{ text-align: center; font-size: 28px; font-weight: 300;
+		&.hide{ display: none;}
+		button{ font-size: 16px;}
+	}
+	&__table{ display: flex; justify-content: center; align-items: center; flex-direction: column; opacity:0; transform-origin:50% 0; transform:scaleY(0); transition: opacity 200ms, transform 200ms; height:0;
+	  	&.show{ height:auto; transform:scaleY(1); opacity:1; }
+		h5{ font-weight:400; font-size: 24px;font-style: normal; display: inline-block; margin: 0; padding-bottom: 25px;
+		   @media screen and (max-width: 600px){ font-size:21px;}
+		 }
 		&__row{  width: 100%; position: relative; cursor:default;
+		 	
 			&__radio{ width:190px; margin-left: 23px; background-color: #ffcc00; height: 100%; position: absolute; right: 0; top: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 29px 11px;
 				b{ width: 16px; height: 16px; background-color: #fff; border:4px solid #fff; display: inline-block; cursor: pointer; margin-right: 11px;
 					&.act{ background-color: transparent;}
@@ -164,7 +176,7 @@ header{ background-color: #fff;}
 				input{ width: 0; opacity: 0;}
 				input:checked + b{ background-color: transparent;}
 				span{ font-size: 15px;}
-				label{ cursor: pointer; width: 50px; display: flex; justify-content: center; align-items: center;
+				label{ cursor: pointer; width: 55px; display: flex; justify-content: center; align-items: center;
 				  @media screen and (max-width: 600px){ width:50%;height:45px; background-color:#000; color:#fff; font-weight:300;}
 				  &.active{
 					@media screen and (max-width: 600px){ background-color:#fc0;}
@@ -260,7 +272,7 @@ header{ background-color: #fff;}
 	h4{ margin: 0; font-size: 31px; font-weight: 100; font-family:'PFDinTextPro'; word-wrap:break-word;}
 	p{ margin: 0; font-size: 13px; font-weight: 300;}
 }
-.steps{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%;
+.steps{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; width: 100%; min-height:672px; height:100vh; display:flex; justify-content:center; align-items:center;
   &__wrap{ position: relative; overflow: hidden; padding: 92px 0 105px;
 	@media screen and (max-width: 600px){  padding: 62px 0 0;}
 	&:before{content: ''; background-image: url(../images/stepsbg.png); width: 1472px; height: 226px; background-repeat: no-repeat; background-size: cover; display: block; position: absolute; left: 0; top: 170px;
@@ -295,15 +307,15 @@ header{ background-color: #fff;}
   }
   &__img{ width: 151px; height: 150px; position: relative; display: flex; justify-content:center; align-items: center; margin: 0 0 27px 18px;
 	@media screen and (max-width: 1024px){ margin: 0 auto 27px;}
-  	&:hover .steps__big-circle{animation: rotating 3s linear infinite;}
-  	&:hover .steps__small-circle{animation: rotating 4s linear infinite; animation-direction: reverse;}
-  	&:hover .steps__small-circle span{animation: rotating 4s linear infinite;}
+  	&:hover .steps__big-circle,
+  	&:hover .steps__small-circle,
+  	&:hover .steps__small-circle span{ animation-play-state: running; -webkit-animation-play-state: running;}
   }
-  &__big-circle{ background-image: url(../images/circle-big.png); width: 151px; height: 150px; background-repeat: no-repeat; background-size: cover; display: block; position: absolute; transition: all 1300ms;
+  &__big-circle{ background-image: url(../images/circle-big.png); width: 151px; height: 150px; background-repeat: no-repeat; background-size: cover; display: block; position: absolute; transition: all 1300ms; animation-play-state: paused; animation: rotating 3s linear infinite; -webkit-animation-play-state: paused;
 	&:before{content: ''; background-color: #fc0; width: 7px; height: 7px; display: block; border-radius: 50%;position: absolute;	  left: 75px; top: -3px;}
   }
-  &__small-circle{ background-repeat: no-repeat; background-size: cover; display: block; background-image: url(../images/circle-small.png); width: 91px; height: 110px; position: absolute; top: 25px; left: 16px; transform-origin: 59.5px 50px;
-	span{ width: 30px; height: 30px; background-color: #fc0;font-size: 12px; font-weight: 500; color: #000; display: flex; justify-content: center; align-items: center; border-radius: 50%; position: absolute; top: 77px; left: 1px;}
+  &__small-circle{ background-repeat: no-repeat; background-size: cover; display: block; background-image: url(../images/circle-small.png); width: 91px; height: 110px; position: absolute; top: 25px; left: 16px; transform-origin: 59.5px 50px;animation-play-state: paused; animation: rotating 4s linear infinite; animation-direction: reverse; -webkit-animation-play-state: paused;
+	span{ width: 30px; height: 30px; background-color: #fc0;font-size: 12px; font-weight: 500; color: #000; display: flex; justify-content: center; align-items: center; border-radius: 50%; position: absolute; top: 77px; left: 1px; animation: rotating 4s linear infinite;  animation-play-state: paused; -webkit-animation-play-state: paused;}
   }
   &__text{ font-weight: 300; font-size: 17px;
 	@media screen and (max-width: 1024px){ text-align:center;}
@@ -317,7 +329,8 @@ header{ background-color: #fff;}
   from {transform: rotate(0deg); }
   to {transform: rotate(360deg);}
 }
-.credit{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%;
+.credit{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; min-height:619px; height:100vh; display:flex; justify-content:center; align-items:center;
+  &>div{ width:100%;}
   &__yellow{ background-color: #fc0; width: 100%; overflow: hidden; position: relative; min-height: 295px;
   	&:before{content: ''; background-image: url(../images/creditbg.png); width: 291px; height: 358px; background-size: cover; background-repeat: no-repeat; position: absolute; left: 50%; top:-43px; transform:translateX(-50%); }
   }
@@ -325,7 +338,7 @@ header{ background-color: #fff;}
 	h4{font-weight: 200; font-family:'PFDinTextPro'; font-size: 35px;    margin: 0;	  padding: 61px 0 0;	  line-height: 1.27;
 	  @media screen and (max-width: 530px){ font-size:25px;padding: 70px 0 0;		line-height: 1.4;}
 	}
-	i{font-style: normal; position: relative; display: inline-block;
+	a{font-style: normal; position: relative; display: inline-block; text-decoration:none; color:#000;
 		&:before{ position: absolute; left: 0; bottom: -2px; content: ''; width: 100%; height: 1px; background-color: #000;
 		  @media screen and (max-width: 530px){ bottom:2px; }
 		}
@@ -362,7 +375,7 @@ header{ background-color: #fff;}
   	img{ margin-right: 15px;}
   }
 }
-.about{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%;
+.about{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; min-height:928px; height:100vh; display:flex; justify-content:center; align-items:center;
   &__ttl{ text-align: center;     padding: 85px 0 15px;	min-height: 161px;
 	@media screen and (max-width: 480px){ padding: 64px 0 15px;	min-height: 1px;}
 	h4{ font-size: 41px; font-weight: 400; font-family:'PFDinTextPro'; margin: 0;
@@ -407,7 +420,7 @@ header{ background-color: #fff;}
 	.slick-next{ right: 5px;}
   }
 }
-.partners{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%;
+.partners{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; min-height:451px; height:100vh; display:flex; justify-content:center; align-items:center;
   h5{ margin: 0; font-family:'PFDinTextPro'; font-weight: 400; font-size: 41px; padding-bottom: 26px;
 	@media screen and (max-width: 479px){ font-size:25px; text-align:center;}
   }
@@ -425,7 +438,7 @@ header{ background-color: #fff;}
   	&:before{ background-image: url(../images/partners-lock.png); width: 96px; height: 154px; content: ''; position: absolute; background-size: cover; background-repeat: no-repeat; left: 53px; top: 26px;}
 	@media screen and (max-width: 479px){ font-size:17px; text-align:center; background-color:transparent; min-height:1px; padding: 0 0 18px; line-height: 25px;
 		p{ max-width:none;}
-	  	&:before{}
+	  	&:before{ left:calc(50% - 48px); top:calc(50% - 77px);}
 	}
   }
   &__slider{ width: 100%;}
@@ -507,7 +520,8 @@ header{ background-color: #fff;}
 	@media screen and (max-width: 890px){ flex-direction:column-reverse; align-items:center; padding: 28px 0 15px; text-align:center;}
   }
 }
-#call_success{ padding: 45px 10px; text-align: center;  max-width: 429px; width: 100%; overflow: initial;}
+
+.result-popup{ padding: 45px 10px; text-align: center;  max-width: 429px; width: 100%; overflow: initial;}
 .call_success{ width: 100%; max-width: 290px; margin: 0 auto;}
 .call-title{ font-size: 25px; font-weight: 200; font-family:'PFDinTextPro'; padding-bottom: 27px;}
 .call-subtitle{ font-size: 15px; font-weight: 300;}
@@ -524,4 +538,7 @@ header{ background-color: #fff;}
   &:after{content:''; position: absolute; width: 20px; height: 2px; background-color: #fff; display: block; top: 50%; left: 5px; transform:rotate(45deg);}
   &:before{transform:rotate(-45deg);}
   @media screen and (max-width: 890px){right: 0px; top: -28px; width:23px;}
+}
+@media screen and (max-width: 1024px){
+	.main section{ height: auto; display: block; min-height: 1px;}
 }

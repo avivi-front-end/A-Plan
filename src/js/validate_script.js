@@ -143,6 +143,7 @@ function Maskedinput(){
 $(document).ready(function(){
    validate('.koleso-form', {submitFunction:validationCall});
    validate('.call-popup-form', {submitFunction:validationCall});
+   validate('.call-popup-form2', {submitFunction:validationCall});
    validate('.credit-form', {submitFunction:validationCall});
    validate('.map-form', {submitFunction:validationCall});
    Maskedinput();

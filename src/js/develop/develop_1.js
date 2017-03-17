@@ -78,11 +78,18 @@ function slickInit(){
 function radioLogic(){
     var radio = $('.radio__table__row__radio input[type=radio]');
     if(radio.length>0){
+
         radio.on('change', function () {
             $(this).closest('.radio__table__row').addClass('act');
             $(this).closest('.radio__table__row__radio').find('label').removeClass('active');
             if($(this).prop('checked')){
                 $(this).closest('label').addClass('active');
+            }
+            if($('.radio__table__row.act').length == $('.radio__table__row').length){
+                $.fancybox.open({
+                    src:'#test-result',
+                    opts:{}
+                });
             }
         });
     }
@@ -180,12 +187,52 @@ function googleMap(mapWrap){
     }
     initialize();
 }
+function checkActiveSection(){
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var sections = $('section');
+    var wH = $(window).height() + scrollTop;
+    sections.each(function(){
+        var center = (($(this).outerHeight())/2) + $(this).offset().top;
+        if(center > scrollTop && center < wH){
+            sections.removeClass('watched');
+            $(this).addClass('watched');
+        }
+    });
+}
+function checkToHIdeScrollButton() {
+    if($('section.map').hasClass('watched')){$('.scrollbutton').addClass('hide')}else{$('.scrollbutton').removeClass('hide')}
+}
+function scrollButtonLogic() {
+    $('.scrollbutton').click(function () {
+        if($('section.watched').next('section').length>0){
+            var target = $('section.watched').next('section').offset().top;
+        }else{
+            var target = $('section').eq(1).offset().top;
+        }
 
+        $(scroller).stop().animate({scrollTop:target},800);
+    });
+}
+function getTest() {
+    var but = $('.radio__checkbutton button');
+    if(but.length>0){
+        but.click(function(){
+            $('.radio__checkbutton').addClass('hide');
+            $('.radio__table').addClass('show');
+        });
+    }
+}
 $(document).ready(function(){
+    scrollButtonLogic();
     slickInit();
     radioLogic();
     getKoloText();
     koloSlider();
     googleMap('map');
+    getTest();
 });
+$(window).scroll(function () {
+    checkActiveSection();
+    checkToHIdeScrollButton();
+})
 

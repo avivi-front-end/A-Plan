@@ -1,6 +1,6 @@
 <div class="hidden-block">
 
-    <div id="call_success">
+    <div id="call_success" class="result-popup">
         <div class="call-success">
              <div class="call_success">
                  <div class="call-title">Благодарим за обращение!</div>
@@ -8,6 +8,14 @@
                      реагируем на заявку - менеджер уже
                      связывается с вами.</div>
              </div>
+        </div>
+    </div>
+    <div id="test-result" class="result-popup">
+        <div class="call-success">
+            <div class="call_success">
+                <div class="call-title">СОГЛАСНЫ ХОТЯ БЫ С ОДНИМ?</div>
+                <div class="call-subtitle">ОТЛИЧНО! ВСЕ ЭТИ УТВЕРЖДЕНИЯ - ПРАВДА. ВЫ УДИВЛЕНЫ? ТЕСТ МОЖНО ПРОЙТИ ЕЩЕ РАЗ, А ВЫБРАТЬСЯ ИЗ РНП ПОЛУЧИТСЯ НЕ РАНЕЕ, ЧЕМ ЧЕРЕЗ 2 ГОДА</div>
+            </div>
         </div>
     </div>
 
@@ -21,6 +29,51 @@
             <div class="form__row">
                 <div class="form__item">
                     <input type="text" required="required" placeholder="Ваш номер телефона" name="phone" class="tel-mask">
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__item">
+                    <button class="button">Жду звонок!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="call-popup2" class="call-popup">
+        <form action="ajax.php" name="" class="call-popup-form2">
+            <div class="form__row">
+                <div class="call-popup__title form__title">
+                    Заполните необходимые поля
+                    для персонального расчета
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__item">
+                    <input type="text" required="required" placeholder="Название компании" name="company" >
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__item">
+                    <input type="text" required="required" placeholder="ИНН" name="inn" >
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__item">
+                    <input type="text" required="required" placeholder="Как к вам обращаться?" name="name" >
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__item">
+                    <input type="email" required="required" placeholder="Ваш e-mail" name="email" >
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__item">
+                    <input type="text" required="required" placeholder="Ваш номер телефона" name="phone" class="tel-mask">
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__item">
+                    <input type="text" required="required" placeholder="Номер лота" name="loth">
                 </div>
             </div>
             <div class="form__row">

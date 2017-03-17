@@ -2,7 +2,8 @@
   overflow: hidden; }
 
 .fancybox-enabled body {
-  overflow: visible;
+  overflow-y:scroll;
+  overflow-x:visible;
   -ms-touch-action: none;
   touch-action: none; }
 

@@ -1,0 +1,90 @@
+<section class="calc">
+    <div class="mbox">
+        <div class="calc__wrap">
+            <div class="calc__ttl">Зарабатывайте на собственном капитале</div>
+            <div class="calc__bttns">
+                <div class="calc__button active" >
+                    <p>от <i>1 500 000</i> руб.</p>
+                    <p>Физическое лицо</p>
+                </div>
+
+                <div class="calc__button">
+                    <p>от <i>500 000</i> руб.</p>
+                    <p>ИП или юридическое лицо</p>
+                </div>
+            </div>
+            <div class="calc__row">
+                <ul class="calc__yellow">
+                    <li><img src="images/calc01.png" alt=""><span>Не выдаем займы            физ. лицам</span></li>
+                    <li><img src="images/calc02.png" alt=""><span>Работаем в сфере           госзаказа</span></li>
+                    <li><img src="images/calc03.png" alt=""><span>Никаких           рисков</span></li>
+                    <li><img src="images/calc04.png" alt=""><span>Передовые модели           оценки бизнеса</span></li>
+                    <li><img src="images/calc05.png" alt=""><span>Собственный           капитал</span></li>
+                    <li><img src="images/calc06.png" alt=""><span>Гарантом выступает           ген. директор A-plan</span></li>
+                </ul>
+                <div class="calc__calc">
+                    <form action="ajax.php" class="calc-form">
+                        <div class="calc__left">
+                            <div class="calc__item">
+                                <select name="test1" class="ippfiz">
+                                    <option value="1500000">Физическое лицо</option>
+                                    <option value="500000">ИП или юридическое лицо</option>
+                                </select>
+                            </div>
+                            <div class="calc__item">
+                                <select name="test2">
+                                    <option value="1">1 месяц</option>
+                                    <option value="2">2 месяца</option>
+                                    <option value="3">3 месяца</option>
+                                    <option value="4">4 месяца</option>
+                                    <option value="5">5 месяца</option>
+                                </select>
+                            </div>
+                            <div class="calc__item">
+                                <select name="test3" >
+                                    <option value="1">Ежемесячные выплаты %</option>
+                                    <option value="2">Не ежемесячные выплаты</option>
+                                </select>
+                            </div>
+                            <div class="calc__item">
+                                <div class="calc__info-total"><span class="num"></span>руб.</div>
+                                <div class="range">
+                                    <div class="range__active">
+                                        <div class="range__left"></div>
+                                        <div class="range__right"></div>
+                                    </div>
+                                </div>
+                                <div class="calc__info-min"><span class="num"></span>руб.</div>
+                                <input type="hidden" name="invest" >
+                            </div>
+                        </div>
+                        <div class="calc__right">
+                            <div class="calc__item">
+                                <p>Рекомендованный инвестиционный
+                                    продукт: «Доходный»</p>
+                            </div>
+                            <div class="calc__item nums">
+                                <div class="nums__total">
+                                    <h6>Общая прибыль:</h6>
+                                    <p><span class="num">0</span>руб.</p>
+                                </div>
+                                <div class="nums__month">
+                                    <h6>Прибыль в месяц:</h6>
+                                    <p><span class="num">0</span>руб./мес.</p>
+                                </div>
+                            </div>
+                            <div class="calc__item">
+                                <h6>Прибыль в месяц:</h6>
+                                <p><span class="num">15</span>% <a href="#">как увеличить?</a></p>
+                            </div>
+                            <div class="calc__item calc__but-sub">
+                                <input type="email" name="email" required="required" placeholder="Введите Ваш e-mail">
+                                <button class="button">Получить расчет</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

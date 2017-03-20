@@ -222,7 +222,142 @@ function getTest() {
         });
     }
 }
+function oneHeightInvest(){
+    var cols = $('.invest__table li');
+    if(cols.length>0){
+        cols.find('.invest__row').each(function () {
+            var maH = 0;
+            var ind = $(this).index();
+            cols.each(function () {
+                var h = $(this).find('.invest__row').eq(ind).height();
+                if (h>maH) maH = h;
+            });
+            cols.each(function () {
+                $(this).find('.invest__row').eq(ind).height(maH);
+            })
+
+
+        });
+    }
+}
+function initOnResize(){
+    var slick = $('.slider-ul');
+    if(slick.length>0 ){
+        slick.slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+    }
+}
+function stylerSelect() {
+    var sel = $('.calc__item select');
+    if(sel.length>0){
+        sel.styler();
+    }
+}
+function newRange(){
+    var circle = $('.range__right');
+    if(circle.length>0){
+        var obj = {};
+        var drag = false;
+        var maxW = $('.range').width();
+        obj.elem = $('.range__active');
+
+        circle.on('mousedown touchstart', function (e) {
+            if (e.which != 1) {   return; }
+            obj.downX = e.pageX;
+            drag = true;
+            obj.elemW = $('.range__active').width();
+
+        });
+        circle.on('touchstart', function () {
+
+            var touch = event.targetTouches[0];
+            obj.downX = touch.pageX;
+            drag = true;
+            obj.elemW = $('.range__active').width();
+
+        });
+        document.onmousemove = function(e) {
+            if ( drag ) {
+                var moveX = e.pageX - obj.downX;
+                var calc = moveX + obj.elemW;
+                if(calc < maxW && calc >=0){
+                    obj.elem.width(calc);
+                    calculate();
+                }
+            }
+        }
+        document.addEventListener('touchmove', function() {
+
+            if ( drag ) {
+
+                var touch = event.targetTouches[0];
+                var moveX =touch.pageX - obj.downX;
+                var calc = moveX + obj.elemW;
+                if(calc < maxW && calc >=0){
+                    obj.elem.width(calc);
+                    calculate();
+                }
+            }
+        });
+        document.onmouseup = function(e) {
+            drag =false;
+        }
+        document.addEventListener('touchend',function(e) {
+            drag =false;
+        });
+    }
+}
+function checkCalc() {
+    var btns= $('.calc__button');
+    if(btns.length>0){
+       
+        btns.click(function () {
+            if(!$(this).hasClass('active')){
+                btns.removeClass('active');
+                $(this).addClass('active');
+                var ind = $(this).index();
+                $('.ippfiz option').eq(ind).prop('selected',true);
+                $('.ippfiz').trigger('refresh');
+                calculate();
+            }
+
+        });
+        
+        
+
+    }
+}
+function calculate() {
+    var select= $('.ippfiz');
+    if(select.length>0){
+        var startLimit;
+        $('.ippfiz option').each(function () {
+            if($(this).prop('selected')){
+                startLimit =parseInt($(this).val());
+                var num = startLimit.toLocaleString();
+                $('.calc__info-min .num').text(num);
+            }
+        });
+        var maxW = $('.range').width();
+        var elemW = $('.range__active').width();
+        var maxLimit = 1000000000;
+        var x = ((maxLimit - startLimit)*elemW)/maxW;
+        var investSum = parseInt(x + startLimit);
+        var invest = investSum.toLocaleString();
+        $('.calc__info-total .num').text(invest);
+
+    }
+}
 $(document).ready(function(){
+    calculate();
+    checkCalc();
+    newRange();
+    stylerSelect();
+    initOnResize();
+    oneHeightInvest();
     scrollButtonLogic();
     slickInit();
     radioLogic();
@@ -235,4 +370,18 @@ $(window).scroll(function () {
     checkActiveSection();
     checkToHIdeScrollButton();
 })
+function debouncer( func , timeout ) {
+    var timeoutID , timeout = timeout || 200;
+    return function () {
+        var scope = this , args = arguments;
+        clearTimeout( timeoutID );
+        timeoutID = setTimeout( function () {
+            func.apply( scope , Array.prototype.slice.call( args ) );
+        } , timeout );
+    }
+}
 
+
+$( window ).resize( debouncer( function ( e ) {
+    oneHeightInvest();
+} ) );

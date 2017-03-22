@@ -150,5 +150,6 @@ $(document).ready(function(){
    validate('.credit-form', {submitFunction:validationCall});
    validate('.calc-form', {submitFunction:validationCall});
    validate('.map-form', {submitFunction:validationCall});
+   validate('.form-boss', {submitFunction:validationCall});
    Maskedinput();
 });

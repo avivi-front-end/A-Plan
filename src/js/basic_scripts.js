@@ -16,28 +16,34 @@ function animationBlock(item){
     });
 
     function checkForAnimate(){
-        var bottomCheck = $(window).height()+$(window).scrollTop();
-        var windowTop = $(window).scrollTop()+($(window).height()/1.5);
-        item.each(function(){
-           if(windowTop>($(this).offset().top+$(this).height()) || bottomCheck > $('body').height()*0.98){
-              var itemSect = $(this);
-              var point = 0;
-              itemSect.find('.animate-it').addClass('animated');
-              var timer = setInterval(function(){
-                  itemSect.find('.animate-delay[data-index='+point+']').addClass('animated');
-                  point++;
-                  var max = 0;
-                  itemSect.find('.animate-delay').each(function () {
-                      var val = parseInt($(this).attr('data-index'));
-                      if(val>max)max=val;
-                  });
-                  if(max < point) clearInterval(timer);
+        if($(window).width()>1024){
+            var bottomCheck = $(window).height()+$(window).scrollTop();
+            var windowTop = $(window).scrollTop()+($(window).height()/1.5);
+            item.each(function(){
+                if(windowTop>($(this).offset().top+$(this).height()) || bottomCheck > $('body').height()*0.98){
+                    var itemSect = $(this);
+                    var point = 0;
+                    itemSect.find('.animate-it').addClass('animated');
+                    var timer = setInterval(function(){
+                        itemSect.find('.animate-delay[data-index='+point+']').addClass('animated');
+                        point++;
+                        var max = 0;
+                        itemSect.find('.animate-delay').each(function () {
+                            var val = parseInt($(this).attr('data-index'));
+                            if(val>max)max=val;
+                        });
+                        if(max < point) clearInterval(timer);
 
-              },200);
+                    },200);
 
 
-           }
-        });
+                }
+            });
+        }else{
+            $('.animate-it').addClass('animated');
+            $('.animate-delay').addClass('animated');
+        }
+
     }
     checkForAnimate();
 }

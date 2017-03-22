@@ -123,7 +123,32 @@ header{ background-color: #fff;}
 		@media screen and (max-width: 1100px){ flex-direction:column; padding-top:35px;}
 	}
 }
-.why{ padding: 16px 0 28px;  text-align: center; min-height:908px; height:100vh; display:flex; justify-content:center; align-items:center;
+.descwhy{ display: flex; justify-content: space-between; align-items: flex-start;
+	&__col{ font-size: 13px; width: 297px; background-color: #f7f7f7;
+		@media screen and (max-width: 1210px){ width: 220px;}
+		&--first{ font-size: 15px; background-color: transparent;
+			.descwhy__head:before{ position: absolute; left: -27px; top: -42px; content: ''; width: 216px; height: 216px; background-image: url(../images/aplanbox.png); background-repeat: repeat; content: ''; z-index: -1;}
+			.descwhy__row{ background-color: #ffd324; border-bottom:1px solid #ffdb3b;}
+		}
+		&--aplan{ background-color: #fff;box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.05);
+			.descwhy__row{  border-bottom:1px solid #fff; padding: 20px 23px;
+				img{ margin-right: 18px;}
+			}
+		}
+
+	}
+	&__head{ display: flex; justify-content: center; align-items: center; position: relative; flex-direction: column; height: 191px; padding-bottom: 7px;
+		h3{ font-weight: 400; font-size: 41px; font-family:'PFDinTextPro'; text-transform: uppercase;}
+		h4{ margin: 32px 0 0; font-weight: 700; font-size: 15px; text-transform: uppercase;}
+	}
+	&__row{border-bottom: 1px solid #efefef; font-weight: 400; display: flex; justify-content: flex-start; align-items: center; text-align: left; padding: 20px 30px; min-height: 60px; line-height: 1.27;
+		&--red{ color: #c60000; font-weight: 300;}
+		&:last-child{ border-bottom:none;}
+	}
+
+}
+.why{ padding: 16px 0 28px;  text-align: center; min-height:908px; height:100vh; display:flex; justify-content:center; align-items: center;
+	&>div{ width: 100%;}
 	&__columns{ width: 100%;
 		&.desctop{ display:block;}
 		&.mobile{ display:none; background-color:#fff;}
@@ -560,7 +585,7 @@ header{ background-color: #fff;}
 	.main section{ height: auto; display: block; min-height: 1px;}
 }
 
-.invest{ background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; overflow: hidden; padding-bottom: 90px;
+.invest{ background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; overflow: hidden; padding-bottom: 90px; min-height: 619px; display: flex; justify-content: center; align-items: center; height: 100vh;
 	&__wrap{}
 	&__ttl{ font-size: 41px; font-family:'PFDinTextPro'; text-align: center; padding: 92px 0 38px;
 		@media screen and (max-width: 900px){ font-size: 26px;}
@@ -610,7 +635,7 @@ header{ background-color: #fff;}
 	.slick-prev{ left: 10px;}
 	.slick-next{ right: 10px;}
 }
-.calc{
+.calc{min-height: 685px; display: flex; justify-content: center; align-items: center; height: 100vh;
 	&__ttl{ font-size: 41px; font-family:'PFDinTextPro'; text-align: center; padding: 92px 0 38px;
 		@media screen and (max-width: 900px){ font-size: 26px;}
 	}
@@ -681,7 +706,7 @@ header{ background-color: #fff;}
 	}
 	&__active{ position: absolute; height: 1px; width: 16px; background-color: #fc0; left: 0; top: 0;}
 }
-.simple{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; overflow: hidden;
+.simple{background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; overflow: hidden; min-height: 506px; display: flex; justify-content: center; align-items: center; height: 100vh;
 	&__ttl{
 		h5{font-size: 41px; font-family:'PFDinTextPro'; text-align: center; padding: 92px 0 45px; font-weight: 400; margin: 0;
 			@media screen and (max-width: 900px){ font-size: 26px;}
@@ -690,7 +715,7 @@ header{ background-color: #fff;}
 			@media screen and (max-width: 900px){ font-size: 20px;}
 		}
 	}
-	&__wrap{overflow: hidden;
+	&__wrap{overflow: hidden; padding-bottom: 61px;
 		ul{ list-style-type: none; margin: 0; padding: 0; border-bottom: 1px solid transparent; border-right: 1px solid transparent; border-left: 1px solid transparent; display: flex; justify-content: space-between; align-items: flex-start; position: relative; transition:all 400ms;
 			@media screen and (max-width: 650px){  border:none; flex-direction: column;}
 			&:after{content: ''; width: 12%; position: absolute; right: 0; height: 1px; background-color: #000; top: 0; transition: transform 400ms, opacity 400ms; opacity: 0; transform-origin: 0 50%; transform: scale(0);
@@ -715,5 +740,69 @@ header{ background-color: #fff;}
 	.animated{
 		.simple__arrow{transform: scale(1); opacity: 1; }
 	}
+}
+.risk{min-height: 634px; display: flex; justify-content: center; align-items: center; height: 100vh;
+	&__wrap{ padding-bottom: 80px;}
+	&__ttl{ font-size: 41px; font-family:'PFDinTextPro'; text-align: center; padding: 92px 0 38px;
+		@media screen and (max-width: 900px){ font-size: 26px;}
+	}
+	&__content{ display: flex; justify-content: space-between; align-items: flex-start;
+		@media screen and (max-width: 1200px){flex-wrap: wrap; justify-content: space-around;}
+	}
+	&__item{border:1px solid #e8e8e8; width: 295px; min-height: 355px; margin-bottom: 20px; opacity: 0; transform: scale(0); transition: all 300ms;
+		&.animated{opacity: 1; transform: scale(1);}
+	}
+	&__img{ display: flex; justify-content: center; align-items: center; height: 168px;}
+	&__txt{ text-align: center; font-size: 15px; font-weight: 300;line-height: 1.7;		padding: 0 25px;}
+	@media screen and (max-width: 1200px){.mbox{ max-width: 880px;}}
+}
+.dohod{min-height: 440px; display: flex; justify-content: center; align-items: center; height: 100vh;
+	&__wrap{ padding-bottom: 50px;}
+	&__ttl{ font-size: 41px; font-family:'PFDinTextPro'; text-align: center; padding: 92px 0 38px;
+		@media screen and (max-width: 900px){ font-size: 26px;}
+	}
+	&__content{ display: flex; justify-content: space-between; align-items: flex-start;
+		@media screen and (max-width: 1200px){flex-wrap: wrap; justify-content: space-around;}
+	}
+	&__item{width: 214px;  margin-bottom: 20px; opacity: 0; transform: scale(0); transition: all 300ms; position: relative; padding-top: 55px; margin-bottom: 20px;
+		&.animated{opacity: 1; transform: scale(1);}
+	}
+	&__num{ font-size: 110px; font-weight: 700; position: absolute; top: 0; left: 0; z-index: 0; font-family:'Roboto'; line-height: 82px; padding-left: 20px;}
+	&__txt{ text-align: center; font-size: 14px; font-weight: 300; padding: 20px 15px 0;; background-color: #fc0; z-index: 10; position: relative; height: 136px; line-height: 1.49;}
+	@media screen and (max-width: 1200px){.mbox{ }}
+}
+.boss{ background-image: url(../images/whatisbg.jpg); background-repeat: repeat; background-position: 50%; overflow: hidden; min-height: 1050px; display: flex; justify-content: center; align-items: center; height: 100vh;
+	&__ttl{ font-size: 41px; font-family:'PFDinTextPro'; text-align: center; padding: 92px 0 30px;
+		@media screen and (max-width: 900px){ font-size: 26px;}
+	}
+	&__wrap{ background-image: url(../images/boss.png); width: 100%; background-repeat: no-repeat; background-size: cover; background-position: 50% 0; display: flex; justify-content: flex-end; align-items: flex-start; min-height: 839px; margin-bottom: 40px;
+		@media screen and (max-width: 992px){ background-position: 75% 0;}
+		@media screen and (max-width: 767px){background: #574d58; border:7px solid #fc0; min-height:1px;}
+		@media screen and (max-width: 479px){border:none;}
+	}
+	&__content{ width: 50%; padding-top: 120px; padding-right: 60px;
+		@media screen and (max-width: 1100px){ width: 60%;}
+		@media screen and (max-width: 992px){ width: 70%;}
+		@media screen and (max-width: 767px){ width:100%; padding:30px 20px;}
+		@media screen and (max-width: 479px){ width:100%; padding:30px 5px;}
+	}
+	&__title{
+		h3{ margin: 0 0 10px; font-weight: 200; color: #fff; font-size: 35px;line-height: 1.15;
+			@media screen and (max-width: 767px){ font-size:25px; padding: 0 10px;}
+		}
+		h5{ margin: 0; font-weight: 200; color: #fff; font-size: 17px;line-height: 1.49;
+			@media screen and (max-width: 767px){ font-size:15px; padding: 0 10px;}
+		}
+		ul{font-weight: 200; color: #fff; font-size: 15px; padding: 44px 0 28px; list-style-type: none;
+			@media screen and (max-width: 992px){ padding: 0;}
+			@media screen and (max-width: 767px){ font-size: 13px; padding:0 10px;}
+			li{ margin-bottom: 22px; display: flex; justify-content: flex-start; align-items: center;}
+			img{ margin-right: 14px;}
+		}
 
+	}
+	&__form{ width: 280px;
+		@media screen and (max-width: 767px){ margin: 0 auto;}
+
+	}
 }

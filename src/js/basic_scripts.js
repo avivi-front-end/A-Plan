@@ -3,108 +3,10 @@ jQuery.browser.mozilla = /mozilla/.test(navigator.userAgent.toLowerCase()) && !/
 jQuery.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
 jQuery.browser.opera = /opera/.test(navigator.userAgent.toLowerCase());
 jQuery.browser.msie = /msie/.test(navigator.userAgent.toLowerCase());
-
 var scroller=jQuery.browser.webkit ? "body": "html";
-
 $.scrollbarWidth=function(){var a,b,c;if(c===undefined){a=$('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body');b=a.children();c=b.innerWidth()-b.height(99).innerWidth();a.remove()}return c};
 
 
-/* scrollUp */
-function scrollUp(block,targetBlock) {
-
-    $(block).click(function(e){
-        var target = $(targetBlock).offset().top;
-
-        $(scroller).stop().animate({scrollTop:target},800);
-        return false;
-
-        e.preventDefault();
-    });
-}
-
-function oneHeightItems(){
-
-    function oneHeight(block, options){
-
-        var timer = null;
-
-        var params = {
-            notebook:false,
-            macBook:false,
-            iPadHorizontal:false,
-            iPadVertical:false,
-            iPhoneHorizontal:false,
-            iPhoneVertical:false,
-            phoneHorizontal:false
-        };
-
-        $.extend(params, options);
-
-        function calcOneHeight(){
-
-            clearTimeout(timer);
-
-            var height=0;
-            $(block).removeAttr('style');
-
-            var calcHeight = false;
-            var windowWidth = $(window).width();
-
-            if(windowWidth > 1366){
-                calcHeight = true;
-            }else if(windowWidth <= 1366 && windowWidth > 1280 && params.notebook == true){
-                calcHeight = true;
-            }else if(windowWidth <= 1280 && windowWidth > 1024 && params.macBook == true){
-                calcHeight = true;
-            }else if(windowWidth <= 1024 && windowWidth > 992 && params.ipadHorizontal == true){
-                calcHeight = true;
-            }else if(windowWidth <= 992 && windowWidth > 767 && params.ipadVertical == true){
-                calcHeight = true;
-            }else if(windowWidth <=767 && windowWidth > 666 && params.iPhoneHorizontal == true){
-                calcHeight = true;
-            }else if(windowWidth <= 666 && windowWidth > 479 && params.iPhoneVertical == true){
-                calcHeight = true;
-            }else if(windowWidth <= 479 && params.phoneHorizontal == true){
-                calcHeight = true;
-            }
-
-
-            if(calcHeight == true){
-                timer = setTimeout(function(){
-
-                    $(block).each(function(index){
-                        if($(this).height() > height){
-                            height=$(this).height();
-                        }
-                    });
-
-                    $(block).css('height', height);
-
-                },0);
-            }
-
-        };
-
-        calcOneHeight();
-
-        $(window).load(function(){
-
-            calcOneHeight();
-
-        });
-
-        $(window).resize(function(){
-
-            calcOneHeight();
-
-        });
-
-    }
-    // options:{notebook:false, macBook:false, iPadHorizontal:false, iPadVertical:false, iPhoneHorizontal:false, iPhoneVertical:false, phoneHorizontal:false}
-
-    oneHeight('.oneHeight', {notebook:true, macBook:true});
-
-}
 
 /*scroll animation*/
 function animationBlock(item){
@@ -117,18 +19,20 @@ function animationBlock(item){
         var bottomCheck = $(window).height()+$(window).scrollTop();
         var windowTop = $(window).scrollTop()+($(window).height()/1.5);
         item.each(function(){
-           if(windowTop>$(this).offset().top || bottomCheck > $('body').height()*0.98){
-
+           if(windowTop>($(this).offset().top+$(this).height()) || bottomCheck > $('body').height()*0.98){
               var itemSect = $(this);
               var point = 0;
               itemSect.find('.animate-it').addClass('animated');
-
               var timer = setInterval(function(){
-                 itemSect.find('.animate-delay').eq(point).addClass('animated');
-                 point++;
-                 if(itemSect.find('.animate-delay').length == point){
-                     clearInterval(timer);
-                 }
+                  itemSect.find('.animate-delay[data-index='+point+']').addClass('animated');
+                  point++;
+                  var max = 0;
+                  itemSect.find('.animate-delay').each(function () {
+                      var val = parseInt($(this).attr('data-index'));
+                      if(val>max)max=val;
+                  });
+                  if(max < point) clearInterval(timer);
+
               },200);
 
 
@@ -232,7 +136,7 @@ $(document).ready(function() {
     $('.footer_placeholder').height($('.footer').outerHeight());
 
     //goTo();
-    //animationBlock($('.setion-animate'));
+    animationBlock($('.animate-section'));
 });
 
 $(window).resize(function() {

@@ -105,10 +105,11 @@ function validationCall(form){
         success : function(data){
             if ( data.trim() == 'true') {
                 thisForm.trigger("reset");
-                popNext("#call_success", "call-popup");
+                popNext("#call_success");
             }
             else {
                thisForm.trigger('reset');
+                console.log(data);
             }
         }
     });
@@ -126,7 +127,9 @@ function popNext(popupId, popupWrap){
     var timer = null;
     timer = setTimeout(function(){
         $('form').trigger("reset");
-        $.fancybox.close(popupId);
+        $.fancybox.close();
+        $.fancybox.close();
+        $.fancybox.close();
     },2000);
 
 }
@@ -145,6 +148,7 @@ $(document).ready(function(){
    validate('.call-popup-form', {submitFunction:validationCall});
    validate('.call-popup-form2', {submitFunction:validationCall});
    validate('.credit-form', {submitFunction:validationCall});
+   validate('.calc-form', {submitFunction:validationCall});
    validate('.map-form', {submitFunction:validationCall});
    Maskedinput();
 });

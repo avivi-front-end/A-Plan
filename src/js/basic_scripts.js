@@ -20,7 +20,7 @@ function animationBlock(item){
             var bottomCheck = $(window).height()+$(window).scrollTop();
             var windowTop = $(window).scrollTop()+($(window).height()/1.5);
             item.each(function(){
-                if(windowTop>($(this).offset().top+$(this).height()) || bottomCheck > $('body').height()*0.98){
+                if(windowTop>($(this).offset().top) || bottomCheck > $('body').height()*0.98){
                     var itemSect = $(this);
                     var point = 0;
                     itemSect.find('.animate-it').addClass('animated');

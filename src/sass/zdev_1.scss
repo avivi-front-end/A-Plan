@@ -438,11 +438,8 @@ header{ background-color: #fff;}
 	p{ color: #333; font-size: 13px; font-weight: 300; margin: 0; line-height: 1.6; padding-bottom: 12px;}
 	h6{ font-weight: 400; font-size: 17px; margin: 0; padding-bottom: 12px;}
 	}
-	&__right{ width:calc(100% - 215px); padding-left: 80px;
-	@media screen and (max-width: 767px){ width:100%; padding-left:0;}
-	p{ font-weight: 300; color: #555; margin: 0 0 31px; line-height: 2.2; letter-spacing: 0.1px;
-	  @media screen and (max-width: 480px){ line-height:23px;}
-	}
+	&__right{ width:calc(100% - 215px); padding-left: 80px;  font-weight: 300; color: #555;line-height: 2.2; letter-spacing: 0.1px;
+		@media screen and (max-width: 767px){ width:100%; padding-left:0;line-height:23px;}
 	}
 	&__slider{ width: 100%; max-width: 858px; margin-left: 50px;
 	@media screen and (max-width: 1400px){

@@ -58,8 +58,7 @@ function slickInit(){
                     breakpoint: 480,
                     settings: {
                         slidesToShow: 1,
-                        arrows:false,
-                        centerMode: true,
+
 
                     }
                 }

@@ -106,6 +106,7 @@ function validationCall(form){
             if ( data.trim() == 'true') {
                 thisForm.trigger("reset");
                 popNext("#call_success");
+                console.log(data);
             }
             else {
                thisForm.trigger('reset');
@@ -125,12 +126,12 @@ function popNext(popupId, popupWrap){
         }
     });
     var timer = null;
-    timer = setTimeout(function(){
-        $('form').trigger("reset");
-        $.fancybox.close();
-        $.fancybox.close();
-        $.fancybox.close();
-    },2000);
+    // timer = setTimeout(function(){
+    //     $('form').trigger("reset");
+    //     $.fancybox.close();
+    //     $.fancybox.close();
+    //     $.fancybox.close();
+    // },2000);
 
 }
 

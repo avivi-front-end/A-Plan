@@ -414,7 +414,23 @@ function calculate() {
 
     }
 }
+function butterClick(){
+    var butter = $('.butter');
+    if(butter.length >0){
+        var menu = $('.slider__menu--mobile ul');
+        butter.click(function(){
+            $(this).toggleClass('active');
+            if($(this).hasClass('active')){
+                menu.slideDown();
+            }else{
+                menu.slideUp();
+            }
+        });
+
+    }
+}
 $(document).ready(function(){
+    butterClick();
     checkToHIdeTopScrollButton();
     calculate();
     checkCalc();

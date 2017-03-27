@@ -306,7 +306,7 @@ header{ background-color: #fff; position: relative; z-index: 100;	}
 	&:before{ content: ''; width: 1098px; height:1098px; border-radius: 50%; border:1px solid #fc0; display: block; position:absolute; top:0; left:calc(50% - 549px);}
 	li{ list-style-type: none; position: absolute;  transform-origin: 50% -506px; transition:transform 300ms; bottom: -40px; left:calc(50% - 47px);
 		&:after{ content: ''; background-color: #ffcc00; width: calc(100% + 10px); left: -5px; top:calc(50% - 9px); height: 18px; border-radius: 9px; display: block; transition:opacify 200ms; position: absolute; z-index: 0; opacity: 0;}
-      &.active{
+      &.active{box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
         &:after{ opacity: 1;}
         .kolo__wrap{ background-color: #fc0;}
         .kolo__img{transform:rotateY(540deg); opacity: 0;

@@ -1,3 +1,16 @@
+function checkBackground() {
+    if( $('.slick-active')[0].hasAttribute('data-img')){
+        $('.video').remove();
+        var img = $('.slick-active').data('img');
+        if (img!=undefined){$('.slider').attr('style','background-image: url('+img+');');}
+    }else if($('.slick-active')[0].hasAttribute('data-video')){
+        $('.video').remove();
+        var vid = $('.slick-active').data('video');
+        var html = '<video class="video"  playsinline autoplay muted loop><source src="'+vid+'" type="video/mp4"></video>';
+        $('section.slider').prepend(html);
+        $('.video').load();
+    }
+}
 function slickInit(){
     var slick =$('.slick-init');
     if(slick.length>0){
@@ -6,9 +19,9 @@ function slickInit(){
             slidesToShow: 1,
             slidesToScroll: 1
         });
-        slick.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-            var img = $('.slick-active').data('img');
-            if (img!=undefined){$('.slider').attr('style','background-image: url('+img+');');}
+        slick.on('afterChange', function(event, slick, currentSlide, nextSlide){
+            checkBackground();
+
         });
     }
     var slick2 =$('.about__slider');
@@ -367,9 +380,8 @@ function checkCalc() {
                 calculate();
             }
         });
-        $('select.period').on('change', function () {
-           calculate();
-        });
+        $('select.period').on('change', function () {  calculate();  });
+        $('select.procent').on('change', function () {  calculate();  });
         $('select.ippfiz').on('change', function () {
 
             var ind = $(this).find('option:selected').index();
@@ -399,12 +411,15 @@ function calculate() {
         var invest = investSum.toLocaleString();
         $('.calc__info-total .num').text(invest);
 
-        var proc = 15;
+        var proc;
         var j= 30.4;
         var k= 365;
         var n ;
         $('select.period option').each(function () {
             if($(this).prop('selected')){ n = parseInt($(this).val());}
+        });
+        $('select.procent option').each(function () {
+            if($(this).prop('selected')){ proc = parseInt($(this).val());}
         });
         var result = 1+((proc*j)/k);
         var sum = investSum * (Math.pow(result, n));
@@ -447,6 +462,7 @@ $(document).ready(function(){
     koloSlider();
     googleMap('map');
     getTest();
+    if($('.slick-init').length > 0)checkBackground();
 });
 $(window).scroll(function () {
     checkActiveSection();

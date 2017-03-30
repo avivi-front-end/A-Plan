@@ -70,7 +70,10 @@ img{vertical-align:bottom;border:0;max-width:100%;}
 
 .footer_placeholder{height: 200px;}
 .footer{position:absolute;bottom:0;left:0;width:100%;z-index:2;overflow:hidden;}
-
+.global-wrapper{ z-index: 9999;}
+.cw_body{z-index: 99;
+    &.hide{ opacity: 0;}
+}
 input, textarea{ font-family:'Roboto'; font-size: 14px; color: #0f0f11;
     &::-webkit-input-placeholder {color:#999;}
     &:-moz-placeholder {color:#999;opacity:1;}

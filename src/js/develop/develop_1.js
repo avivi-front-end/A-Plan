@@ -234,7 +234,13 @@ function checkActiveSection(){
     });
 }
 function checkToHIdeScrollButton() {
-    if($('section.map').hasClass('watched')){$('.scrollbutton').addClass('hide')}else{$('.scrollbutton').removeClass('hide')}
+    if($('section.map').hasClass('watched')){
+        $('.scrollbutton').addClass('hide');
+        if($(window).width() < 992){$('.cw_body').addClass('hide');}
+    }else{
+        $('.scrollbutton').removeClass('hide');
+        if($(window).width() < 992){$('.cw_body').removeClass('hide');}
+    }
 }
 function checkToHIdeTopScrollButton() {
     if($('section.slider').hasClass('watched')){$('.topscrollbutton').addClass('hide')}else{$('.topscrollbutton').removeClass('hide')}

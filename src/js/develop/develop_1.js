@@ -416,22 +416,30 @@ function calculate() {
         var investSum = parseInt(x + startLimit);
         var invest = investSum.toLocaleString();
         $('.calc__info-total .num').text(invest);
-
-        var proc;
+        var p = 0.174;
         var j= 30.4;
         var k= 365;
         var n ;
+        var formula = 0;
         $('select.period option').each(function () {
             if($(this).prop('selected')){ n = parseInt($(this).val());}
         });
         $('select.procent option').each(function () {
-            if($(this).prop('selected')){ proc = parseInt($(this).val());}
+            if($(this).prop('selected')){
+                formula = parseInt($(this).val());
+            }
         });
-        var result = 1+((proc*j)/k);
-        var sum = investSum * (Math.pow(result, n));
-        $('.nums__total .num').text(parseInt(sum).toLocaleString());
+        if (formula == 0){
+            var result = 1+((p*j)/k);
+            var sum = investSum * (Math.pow(result, n));
+        }else{
+            var sum = investSum * p/k*j * n + investSum;
+        }
         var month = sum/n;
+        var percent = ((sum-investSum)/investSum)*100;
+        $('.nums__total .num').text(parseInt(sum).toLocaleString());
         $('.nums__month .num').text(parseInt(month).toLocaleString());
+        $('.percentage .num').text(percent.toFixed(2).toLocaleString());
 
     }
 }

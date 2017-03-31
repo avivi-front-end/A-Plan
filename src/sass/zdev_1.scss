@@ -68,7 +68,7 @@ header{ background-color: #fff; position: relative; z-index: 100;	}
 }
 .slider{ background-image: url(../images/bgfortz.jpg); background-position: bottom 50%; background-size:cover; width: 100%; height:calc(100vh - 100px); min-height: 670px; display: flex; justify-content: center; align-items: center; transition:all 200ms; position: relative; overflow: hidden; position: relative;
 	.video {		position: absolute;		top: 50%;		left: 50%;		min-width: 100%;		min-height: 100%;		width: auto;		height: auto;	transform: translate(-50%, -50%);	}
-	&__menu{ position: absolute; bottom: 0; left: 0; right: 0;width: 100%; background-color: rgba(0,0,0,0.7); z-index: 100;
+	&__menu{ position: absolute; bottom: 0; left: 0; right: 0;width: 100%; background-color: rgba(0,0,0,0.7); z-index: 300;
 		ul{ display: flex; justify-content: space-around; align-items: center; height: 70px; width: 100%; padding: 0 10px; max-width: 1280px; margin: 0 auto; list-style-type: none;
 			li{ text-align: center;
 			  	a{ color: #778499; text-decoration:none; border-bottom: 1px solid #778499; position: relative; text-transform: uppercase; transition:all 200ms; padding-bottom: 3px;

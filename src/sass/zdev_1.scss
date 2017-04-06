@@ -394,7 +394,7 @@ header{ background-color: #fff; position: relative; z-index: 100;	}
   &__big-circle{ background-image: url(../images/circle-big.png); width: 151px; height: 150px; background-repeat: no-repeat; background-size: cover; display: block; position: absolute; transition: all 1300ms; animation-play-state: paused; animation: rotating 3s linear infinite; -webkit-animation-play-state: paused; top: 0; left: 0;
 	&:before{content: ''; background-color: #fc0; width: 7px; height: 7px; display: block; border-radius: 50%;position: absolute;	  left: 75px; top: -3px;}
   }
-  &__small-circle{ background-repeat: no-repeat; background-size: cover; display: block; background-image: url(../images/circle-small.png); width: 91px; height: 110px; position: absolute; top: 25px; left: 16px; transform-origin: 59.5px 50px;animation-play-state: paused; animation: rotating 4s linear infinite; animation-direction: reverse; -webkit-animation-play-state: paused;
+  &__small-circle{ background-repeat: no-repeat; background-size: cover; display: block; background-image: url(../images/circle-small.png); width: 91px; height: 110px; position: absolute; top: 20px; left: 20px; transform-origin: 55px 55px;animation-play-state: paused; animation: rotating 4s linear infinite; animation-direction: reverse; -webkit-animation-play-state: paused;
 	span{ width: 30px; height: 30px; background-color: #fc0;font-size: 12px; font-weight: 500; color: #000; display: flex; justify-content: center; align-items: center; border-radius: 50%; position: absolute; top: 77px; left: 1px; animation: rotating 4s linear infinite;  animation-play-state: paused; -webkit-animation-play-state: paused;}
   }
   &__text{ font-weight: 300; font-size: 17px;

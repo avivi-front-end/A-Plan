@@ -456,8 +456,10 @@ function butterClick(){
             $(this).toggleClass('active');
             if($(this).hasClass('active')){
                 menu.slideDown();
+                $('.scrollbutton').css('display','none');
             }else{
                 menu.slideUp();
+                $('.scrollbutton').css('display','block');
             }
         });
 
@@ -474,6 +476,8 @@ function desctopBurger() {
     }
 }
 $(document).ready(function(){
+    $.fancybox.defaults.closeClickOutside =false;
+    $.fancybox.defaults.touch =false;
     desctopBurger();
     butterClick();
     checkToHIdeTopScrollButton();

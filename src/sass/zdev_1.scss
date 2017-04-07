@@ -53,7 +53,7 @@ header{ background-color: #fff; position: relative; z-index: 100;	}
 	@media screen and (max-width: 1024px){ margin: 0 auto;}
   }
 }
-.butter{ width: 51px; height: 51px; display: block; cursor: pointer; background-color:#fc0;  position: absolute; z-index: 101; bottom: 0; left: 0; pointer-events: all;
+.butter{ width: 51px; height: 51px; display: block; cursor: pointer; background-color:#fc0;  position: absolute; z-index: 101; bottom: 0; left: 0; pointer-events: all;     box-shadow: 0 0 6px 0px rgba(0,0,0,0.2);
 	span{ width: 30px; height: 2px; background-color: #000; display: block; position: absolute; left: 10px; top: 15px; transition:all 600ms;
 		&:nth-child(2){ top: 23px;}
 		&:nth-child(3){ top: 31px;}
@@ -78,12 +78,13 @@ header{ background-color: #fff; position: relative; z-index: 100;	}
 		}
 	  	@media screen and (max-width: 992px){ display: none;}
 
-		&--mobile{ display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: transparent; pointer-events: none;
-			ul{position: absolute; bottom: 0;background-color: rgba(0,0,0,0.8); padding:20px 50px; flex-direction: column; height: auto; pointer-events: all; display: none;
+		&--mobile{ display: none; position: fixed; bottom: 70px; left: 70px; width: 100%; background-color: transparent; pointer-events: none;
+			ul{position: absolute; bottom: -70px; left: -70px; background-color: rgba(0,0,0,0.8); padding:20px 50px; flex-direction: column; height: auto; pointer-events: all; display: none;
 				li{ margin-bottom: 15px;}
 				@media screen and (max-width: 479px){ padding:20px 15px 50px;}
+				@media screen and (max-width: 992px){  bottom: 0; left: 0;}
 			}
-			@media screen and (max-width: 992px){ display: block;}
+			@media screen and (max-width: 992px){ display: block!important; bottom: 0; left: 0;}
 		}
 	}
 	&__content{width: 100%; padding: 0 10px; z-index: 100; position: relative;
@@ -213,7 +214,7 @@ header{ background-color: #fff; position: relative; z-index: 100;	}
 
 }
 .fancybox-enabled .scrollbutton{ display:none;}
-.topscrollbutton{ width: 51px; height: 51px; position: fixed;  right: 70px; bottom: 70px; cursor:pointer; z-index:999; opacity:1; transition:all 200ms; background-color: #fc0; background-image: url(../images/up-arrow.png); background-repeat: no-repeat; background-position: 50%;
+.topscrollbutton{ width: 51px; height: 51px; position: fixed;  right: 70px; bottom: 70px; cursor:pointer; z-index:999; opacity:1; transition:all 200ms; background-color: #fc0; background-image: url(../images/up-arrow.png); background-repeat: no-repeat; background-position: 50%;     box-shadow: 0 0 6px 0px rgba(0,0,0,0.2);
 	&:hover{ }
 	&.hide{ opacity:0; pointer-events:none;}
 	@media screen and (max-width: 1024px){ right: 0; bottom: 0;}
@@ -557,6 +558,9 @@ header{ background-color: #fff; position: relative; z-index: 100;	}
 	  &.error{border-color:red;}
 	}
 	button{ width: 100%; font-size: 13px; height: 60px; margin-bottom: 15px;}
+	  .credit__lock-content{
+		  @media screen and (max-width: 530px){ padding: 0 0 10px;}
+	  }
   }
 }
 .footer{ background-color: #272c32;

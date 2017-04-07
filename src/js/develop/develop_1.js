@@ -243,7 +243,12 @@ function checkToHIdeScrollButton() {
     }
 }
 function checkToHIdeTopScrollButton() {
-    if($('section.slider').hasClass('watched')){$('.topscrollbutton').addClass('hide')}else{$('.topscrollbutton').removeClass('hide')}
+    if($('section.slider').hasClass('watched')){
+        $('.topscrollbutton').addClass('hide');
+
+    }else{
+        $('.topscrollbutton').removeClass('hide')
+    }
 }
 function scrollButtonLogic() {
     $('.scrollbutton').click(function () {
@@ -458,7 +463,18 @@ function butterClick(){
 
     }
 }
+function desctopBurger() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var needTop = $('section.slider').outerHeight() + $('section.slider').offset().top;
+    var needBot = $('.footer').offset().top - $(window).height();
+    if(scrollTop > needTop && scrollTop < needBot){
+        $('.slider__menu--mobile').css('display','block');
+    }else{
+        $('.slider__menu--mobile').css('display','none');
+    }
+}
 $(document).ready(function(){
+    desctopBurger();
     butterClick();
     checkToHIdeTopScrollButton();
     calculate();
@@ -482,6 +498,7 @@ $(window).scroll(function () {
     checkActiveSection();
     checkToHIdeScrollButton();
     checkToHIdeTopScrollButton();
+    desctopBurger();
 })
 function debouncer( func , timeout ) {
     var timeoutID , timeout = timeout || 200;

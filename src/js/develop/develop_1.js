@@ -457,9 +457,11 @@ function butterClick(){
             if($(this).hasClass('active')){
                 menu.slideDown();
                 $('.scrollbutton').css('display','none');
+                $('.cw_body').css('display','none');
             }else{
                 menu.slideUp();
                 $('.scrollbutton').css('display','block');
+                $('.cw_body').css('display','block');
             }
         });
 
